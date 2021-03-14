@@ -11,7 +11,7 @@ from keras.layers import LayerNormalization
 from clip_generator import DataGenerator 
 from config import *
 
-def get_model(reload_model=True):
+def get_model(train=True):
     """
     Parameters
     ----------
@@ -19,7 +19,7 @@ def get_model(reload_model=True):
         Load saved model or retrain it
     """
     
-    if not reload_model:
+    if not train:
         return load_model(
             MODEL_PATH,
             custom_objects={'LayerNormalization': LayerNormalization}

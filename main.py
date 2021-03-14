@@ -6,7 +6,7 @@ from model import get_model
 from data import get_single_test
 
 def evaluate():
-    model = get_model(reload_model=True)
+    model = get_model(train=TRAIN_MODEL)
     print("got model")
     test = get_single_test()
     print("got test")
