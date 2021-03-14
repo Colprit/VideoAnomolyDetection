@@ -36,6 +36,7 @@ def evaluate():
     plt.plot(sr)
     plt.ylabel('regularity score Sr(t)')
     plt.xlabel('frame t')
+    plt.savefig(f'{MODEL_DIR}/test_figures/Figure_{TEST}.png')
     plt.show()
 
 if __name__=="__main__":

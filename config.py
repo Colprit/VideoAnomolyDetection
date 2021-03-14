@@ -1,8 +1,11 @@
 DATASET_PATH ="./UCSD_Anomaly_Dataset.v1p2/UCSDped1/Train"
 TEST_PATH = "./UCSD_Anomaly_Dataset.v1p2/UCSDped1/Test"
-SINGLE_TEST_PATH = "./UCSD_Anomaly_Dataset.v1p2/UCSDped1/Test/Test002"
+TEST = "002"
+SINGLE_TEST_PATH = f"./UCSD_Anomaly_Dataset.v1p2/UCSDped1/Test/Test{TEST}"
 
-MODEL_PATH = "./models/000/model.hdf5"
+VERSION = "001"
+MODEL_DIR = f"./models/{VERSION}"
+MODEL_PATH = f"{MODEL_DIR}/model.hdf5"
 TRAIN_MODEL = False
 
 EPOCHS = 1
