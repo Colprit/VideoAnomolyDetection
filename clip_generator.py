@@ -15,6 +15,8 @@ def get_IDs(dataset_path, clip_len, stride):
                 for file in sorted(listdir(directory_path))
                 if file.endswith('tif')
             ]
+            # to reduce training set size
+            img_files = img_files[:100]
             for i in range(len(img_files) - clip_len*stride):
                 IDs.append((
                     folder, 
