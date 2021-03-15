@@ -1,7 +1,7 @@
 DATASET_PATH ="./UCSD_Anomaly_Dataset.v1p2/UCSDped1/Train"
 TEST_PATH = "./UCSD_Anomaly_Dataset.v1p2/UCSDped1/Test"
-TEST = "002"
-SINGLE_TEST_PATH = f"./UCSD_Anomaly_Dataset.v1p2/UCSDped1/Test/Test{TEST}"
+TEST_NUM = 2
+SINGLE_TEST_PATH = "./UCSD_Anomaly_Dataset.v1p2/UCSDped1/Test/Test{:03d}"
 
 VERSION = "001"
 MODEL_DIR = f"./models/{VERSION}"

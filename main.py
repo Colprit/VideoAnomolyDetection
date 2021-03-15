@@ -6,10 +6,10 @@ from config import *
 from model import get_model
 from data import get_single_test
 
-def evaluate():
+def evaluate(test_num):
     model = get_model(train=TRAIN_MODEL)
     print("got model")
-    test = get_single_test()
+    test = get_single_test(test_num)
     print("got test")
 
     num_clips = test.shape[0] - CLIP_LEN
@@ -39,8 +39,10 @@ def evaluate():
     plt.xlabel('frame t')
     if not os.path.exists(FIG_PATH):
         os.makedirs(FIG_PATH)
-    plt.savefig(f'{FIG_PATH}/Figure_{TEST}.png')
-    plt.show()
+    plt.savefig(f'{FIG_PATH}/Figure_{(test_num or TEST_NUM):03d}.png')
+    # plt.show()
+    plt.clf()
 
 if __name__=="__main__":
-    evaluate()
+    for i in range(4, 16):
+        evaluate(i)

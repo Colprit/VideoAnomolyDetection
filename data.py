@@ -66,13 +66,14 @@ def get_training_set():
     
     return clips
 
-def get_single_test():
+def get_single_test(test_num=None):
     size = 200
     test = np.zeros(shape=(size, 256, 256, 1))
     count = 0
-    for file in sorted(listdir(SINGLE_TEST_PATH)):
+    test_path = SINGLE_TEST_PATH.format(test_num or TEST_NUM)
+    for file in sorted(listdir(test_path)):
         if file.endswith('tif'):
-            img = Image.open(join(SINGLE_TEST_PATH, file)).resize((256, 256))
+            img = Image.open(join(test_path, file)).resize((256, 256))
             img = np.array(img, dtype=np.float32) / 256.0
             test[count, :, :, 0] = img
             count += 1
