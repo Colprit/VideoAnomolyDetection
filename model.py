@@ -38,7 +38,7 @@ def get_model(train=True):
     seq = Sequential()
     seq.add(TimeDistributed(
         Conv2D(16, (11,11), strides=4, padding="same"),
-        batch_input_shape=(None, 10, 256, 256, 1)
+        batch_input_shape=(None, *DIM, N_CHANNELS)
     ))
     seq.add(LayerNormalization())
     seq.add(TimeDistributed(Conv2D(8, (8,8), strides=4, padding="same")))
