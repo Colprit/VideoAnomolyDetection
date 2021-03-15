@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -36,7 +37,9 @@ def evaluate():
     plt.plot(sr)
     plt.ylabel('regularity score Sr(t)')
     plt.xlabel('frame t')
-    plt.savefig(f'{MODEL_DIR}/test_figures/Figure_{TEST}.png')
+    if not os.path.exists(FIG_PATH):
+        os.makedirs(FIG_PATH)
+    plt.savefig(f'{FIG_PATH}/Figure_{TEST}.png')
     plt.show()
 
 if __name__=="__main__":
